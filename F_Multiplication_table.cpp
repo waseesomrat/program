@@ -2,22 +2,22 @@
 
 using namespace std;
 
-void multi(int x, int y){
+void multi(int a){
 
 
     for(int i = 1;i <= 12;i++){
         
-        y = 1 * i;
+       int y = a * i;
         
-        cout<<1 * i << "=" << y<<endl;
+        cout<<a<<" * "<<i<<" "<< "=" <<" "<<y<<endl;
 
     }
 }
 
 int main() {
 
-    int a,y;
+    int a;
     cin>>a;
-    multi(a , y);
+    multi(a);
     return 0;
 }
