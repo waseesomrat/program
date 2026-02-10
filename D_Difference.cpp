@@ -3,12 +3,7 @@
 
 using namespace std;
 int difference(long long x , long long y, long long z , long long q){
-
-long long result= (x * y) - (z * q);
-
-cout<<"Difference = "<< result;
-
-return 0;
+return (x * y) - (z * q);
 }
 
 int main() {
@@ -19,6 +14,6 @@ cin>> a >> b >> c >> d;
 
 
 difference(a , b ,c ,d);
-
+cout<<"Difference = "<< ((a * b) - (c * d));
 return 0;
 }
