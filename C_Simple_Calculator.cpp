@@ -3,8 +3,7 @@
 using namespace std;
 int operation(long long x , long long y){
 
-
-
+    
     cout<< x<< " + " << y << " = " <<  x + y<<endl; 
     cout<< x<< " * " << y << " = " <<  x * y<<endl; 
     cout<< x<< " - " << y << " = " << x - y<<endl; 
