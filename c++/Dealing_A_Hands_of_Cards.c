@@ -23,10 +23,8 @@ int main() {
 
     while(count < n){
         int r = rand() % 52;
-
         if(used[r] == 0){
             used[r] = 1;
-
             int suit = r / 13;
             int rank = r % 13;
 
