@@ -42,13 +42,13 @@ int main() {
 
             // Print suit
             if(suit == 0)
-                printf("C ");
+                printf("c ");
             else if(suit == 1)
-                printf("D ");
+                printf("d ");
             else if(suit == 2)
-                printf("H ");
+                printf("h ");
             else
-                printf("S ");
+                printf("s ");
 
             count++;
         }
