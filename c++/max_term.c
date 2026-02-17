@@ -10,7 +10,7 @@ int *GetPtrToMax(int arr[], int len){
     for(int i = 0;i < len;i++){
         p++; // moves pointer to next element for every iteration;
 
-        if(*p > *Maxptr){
+        if(*p > *Maxptr){ 
             Maxptr = p;
         }
     }
