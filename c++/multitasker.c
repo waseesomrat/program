@@ -10,7 +10,6 @@ void GCD_LCM(int n1, int n2, int *out_gcd, int *out_lcm)
     int c = gcd(n1, n2);
     *out_gcd = c;
     *out_lcm = (n1 / c) * n2;
-
     int d = *out_lcm;
 }
 
