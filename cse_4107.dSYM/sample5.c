@@ -5,7 +5,6 @@ int main() {
 int r;
 scanf("%d\n", &r);
 double m[r];
-
 double sum = 0;
 int count = 0;
 for(int i = 1; i <= r ;i++){

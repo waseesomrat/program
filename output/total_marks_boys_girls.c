@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 float sum_of_marks(float marks[], int n, char ch) {
     float sum = 0;
     if (ch == 'B' || ch == 'b') {

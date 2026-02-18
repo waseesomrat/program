@@ -1,33 +1,43 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
 
-int main()
-{
+int main() {
 
-    char ch[100];
 
-    printf("Enter the sentence: ");
-    fgets(ch, 100, stdin);
-    int len = strlen(ch);
-    if (ch[len - 1] == '\n')
-    {
-        ch[len - 1] = '\0';
+char sen[1000];
+int l;
+int c;
+
+
+while((c = getchar()) != '\n' && c != EOF){
+
+    if(l < sizeof(sen) - 1){
+        sen[l++] = (char)c;
     }
+}
+    sen[l] = '\0';
 
-    for (int i = strlen(ch) - 1; i >= 0; i--)
-    {
-        {
-            if (i == 0 || ch[i - 1] == ' ')
-            {
-                int j = i;
-                while (ch[j] != ' ' && ch[j] != '\0')
-                {
-                    printf("%c", ch[j]);
-                    j++;
-                }
-                printf(" ");
-            }
+
+    for(int i = l - 1;i >= 0;i--){
+
+        while(i >= 0 && sen[i] == ' '){
+            i--;
         }
-    }
-    return 0;
+       if(i < 0)
+    break;
+
+    int end = i;
+
+        while(i >= 0 && sen[i] != ' ')
+            i--;
+        
+
+        int start = i + 1;
+
+        for(int j = start; j <= end;j++){
+            printf("%c", sen[j]);
+        }
+        printf(" ");
+}
+printf("\n");
+return 0;
 }

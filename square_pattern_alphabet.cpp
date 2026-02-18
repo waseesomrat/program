@@ -5,10 +5,10 @@ void pattern(int n){
 
 
     for(int i = 1;i <= n;i++){
-
-        for(char j = 'A';j < 'A' + n;j++){
+        char ch = 'A';
+        for(char j = 'A';j <'A' + n ;j++){
             cout<<j<<" ";
-            
+        
         }
         cout<<endl;
     }
