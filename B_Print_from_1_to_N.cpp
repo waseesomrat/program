@@ -8,9 +8,10 @@ void n_lines(int n){
 if(n == 0)
 return;
 
-    cout<<n<<endl;
 
-    n_lines(n - 1);
+
+    n_lines(n -  1);
+        cout<<n<<endl;
 }
 
 int main() {
