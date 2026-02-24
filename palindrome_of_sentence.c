@@ -26,7 +26,7 @@ int main()
     }
     if (toupper(*start != toupper(*end)))
     {
-        printf("Not a palindrome");
+    printf("Not a palindrome");
         return 0;
     }
     start++;
