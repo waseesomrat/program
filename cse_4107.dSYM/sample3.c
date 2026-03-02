@@ -1,18 +1,20 @@
-#include <stdio.h>
-
+#include<stdio.h>
+#include<strings.h>
 int main() {
-    int n;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
 
-    printf("Reversed: ");
+char str[] = "hello";
+// printf("length: %lu", strlen(str));
 
-    do {
-        printf("%d", n % 10);
-        n /= 10; 
-    } while (n > 0);
+// char dest[6];
 
-    printf("\n");
-    return 0;
+// strcpy(dest,str);
+// printf("%s", dest);
+
+char a[] = "apple";
+char b[] = "banana";
+
+// int result = strcmp(a, b);
+printf("%d", strcmp(a, b));
+return 0;
 }
