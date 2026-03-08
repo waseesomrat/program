@@ -1,19 +1,22 @@
 #include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
 
 int main() {
+    struct Student s1;
 
-int r;
-scanf("%d\n", &r);
-double m[r];
-double sum = 0;
-int count = 0;
-for(int i = 1; i <= r ;i++){
+    s1.id = 101;
+    strcpy(s1.name, "wasi");
+    s1.marks = 95.5;
 
-scanf("%lf", &m[i]);
-    count++;
-sum += m[i];
-}
-printf("%lf", sum / count);
+    printf("ID: %d\n", s1.id);
+    printf("Name: %s\n", s1.name);
+    printf("Marks: %.2f\n", s1.marks);
 
-return 0;
+    return 0;
 }

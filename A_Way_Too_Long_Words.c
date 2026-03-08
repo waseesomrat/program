@@ -22,8 +22,12 @@ int main()
                 }
             }
             else
+            {
                 printf("%c%d%c", ch[0], length - 2 , ch[length - 1]);
         }
-        printf("\n");
+    
+          printf("\n");
+    }
+      
  }
 
