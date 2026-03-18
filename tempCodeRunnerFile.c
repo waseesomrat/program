@@ -1,31 +1,58 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main() {
+int main()
+{
 
-char c[1000];
-char *p , *q;
-char ch;
-int len;
-while((ch = getchar()) != '\n' && ch != EOF){
+    int n;
+    scanf("%d", &n);
 
-    c[len] = ch;
-    len++;
-}
-c[len] = '\0';
+    while (n--)
+    {
 
-p = c;
-q = c;
-while(*q != '\0'){
+        int m, count = 0, p = 0;
+        scanf("%d", &m);
+        int k = 0;
+        if (m % 1 == 0)
+            k = 1;
+        if ((m % 2 == 0) && ((m / 2 == 1) || (m / 2 == 11) || (m / 2 == 111) || (m / 2 == 1111)) )
+            k = 2;
+        if (m % 3 == 0)
+            k = 3;
+         if ((m % 4 == 0) && ((m / 4 == 1) || (m / 4 == 11) || (m / 4 == 111) || (m / 4 == 1111)) )
+            k = 4;
+        if (m % 5 == 0)
+            k = 5;
+        if ((m % 6 == 0) && ((m / 6 == 1) || (m / 6 == 11) || (m / 6 == 111) || (m / 6 == 1111)) )
+            k = 6;
+        if (m % 7 == 0)
+            k = 7;
+        if (m % 8 == 0)
+            k = 8;
+        if (m % 9 == 0)
+            k = 9;
 
-
-if(*q != 'A' && *q != 'E' && *q != 'I' && *q != 'O' && *q != 'U' &&
-*q != 'a' && *q != 'e' && *q != 'i' && *q != 'o' && *q != 'u'){
-
-*p = *q;
-q++;
-}
-}
-*p = '\0';
-printf("output: %s", c);
-return 0;
+        while (m > 0)
+        {
+            m /= 10;
+            count++;
+            if (count == 1)
+            {
+                p = (k - 1) * 10 + 1;
+            }
+            if (count == 2)
+            {
+                p = (k - 1) * 10 + 3;
+            }
+            if (count == 3)
+            {
+                p = (k - 1) * 10 + 6;
+            }
+            if (count == 4)
+            {
+                p = (k - 1) * 10 + 10;
+            }
+        }
+        printf("%d\n", p);
+    }
+    return 0;
 }
