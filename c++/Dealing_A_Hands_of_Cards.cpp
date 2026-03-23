@@ -4,21 +4,18 @@
 using namespace std;
 
 int main() {
-    srand(time(nullptr));   // seed using current time
+    srand(time(nullptr));
 
-    string suits[] = {"c", "d", "h", "s"};   // clubs, diamonds, hearts, spades
+    string suits[] = {"c", "d", "h", "s"};
     string ranks[] = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 
     string deck[52];
     int index = 0;
-
-    // Create full deck (52 cards)
     for(int i = 0; i < 4; i++){
         for(int j = 0; j < 13; j++){
             deck[index++] = ranks[j] + suits[i];
         }
     }
-    // Shuffle deck (Fisher-Yates shuffle)
     for(int i = 51; i > 0; i--){
         int j = rand() % (i + 1);
         swap(deck[i], deck[j]);
