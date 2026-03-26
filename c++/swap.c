@@ -1,16 +1,12 @@
 #include<stdio.h>
-void swap(int *x, int *y){
-int temp = *y;
-*y = *x;
-*x = temp;
+void swap(int *p , int *q){
+    int temp = *q;
+        *q = *p;
+        *p = temp;
 }
 int main() {
-int q;
-int p;
-printf("Enter values:");
-scanf("%d %d",&p,&q);
-swap(&p,&q);
-printf("%d %d", p, q);
-return 0;
-
+int x, y;
+scanf("%d %d", &x , &y);
+swap(&x,&y);
+printf("%d %d", x,y);
 }
