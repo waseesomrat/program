@@ -3,24 +3,18 @@
 #include <time.h>
 
 int main() {
-
     srand(time(NULL));
-
     int used[52] = {0};
     int n;
-
     printf("Enter number of cards: ");
     scanf("%d", &n);
-
     if(n > 52){
         printf("Cannot pick more than 52 cards\n");
         return 0;
     }
 
     printf("Your hand: ");
-
     int count = 0;
-
     while(count < n){
         int r = rand() % 52;
         if(used[r] == 0){
@@ -49,10 +43,8 @@ int main() {
                 printf("h ");
             else
                 printf("s ");
-
             count++;
         }
     }
-
     return 0;
 }
