@@ -16,8 +16,5 @@ printf("%d\n", b);
 else if(b == c)
 printf("%d\n", a);
 }
-
 return 0;
-
-
 }
