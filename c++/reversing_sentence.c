@@ -1,43 +1,69 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <ctype.h>
 
-int main() {
+int readline(char str[], int size)
+{
+    int i = 0, c;
 
-
-char sen[1000];
-int l;
-int c;
-
-
-while((c = getchar()) != '\n' && c != EOF){
-
-    if(l < sizeof(sen) - 1){
-        sen[l++] = (char)c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+        if (i < size - 1)
+            str[i++] = (char)c;
     }
+    str[i] = '\0';
+    return i;
 }
-    sen[l] = '\0';
 
+void reverseword(char str[], int len)
+{
+    char punct = '\0';
 
-    for(int i = l - 1;i >= 0;i--){
+    if (len > 0 && ispunct(str[len - 1]))
+    {
+        punct = str[len - 1];
+        str[len - 1] = '\0';
+        len--;
+    }
 
-        while(i >= 0 && sen[i] == ' '){
+    int i = len - 1;
+
+    while (i >= 0)
+    {
+        while (i >= 0 && str[i] == ' ')
             i--;
-        }
-       if(i < 0)
-    break;
 
-    int end = i;
+        if (i < 0)
+            break;
 
-        while(i >= 0 && sen[i] != ' ')
+        int end = i;
+
+        while (i >= 0 && str[i] != ' ')
             i--;
-        
 
         int start = i + 1;
 
-        for(int j = start; j <= end;j++){
-            printf("%c", sen[j]);
+        for (int j = start; j <= end; j++)
+        {
+            printf("%c", str[j]);   // ✅ FIXED
         }
-        printf(" ");
+
+        printf(" ");  // ✅ moved outside
+    }
+
+    // ✅ print punctuation once
+    if (punct != '\0')
+    {
+        printf("%c", punct);
+    }
 }
-printf("\n");
-return 0;
+
+int main()
+{
+    char sen[1000];
+
+    int len = readline(sen, 1000);
+    reverseword(sen, len);
+
+    printf("\n");
+    return 0;
 }

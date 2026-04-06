@@ -1,28 +1,29 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
+
+#include<math.h>
+
+int isPrime(int n , int i ){
+if(n <= 2){
+    return (n == 2);
+}
+
+if(n % i == 0){
+return 0;
+}
+
+if(i * i > n)
+    return 1;
+
+    return isPrime(n , i + 1);
+}
 
 int main() {
-    int n, count = 0;
 
+    int n;
     scanf("%d", &n);
-
-    for (int num = 2; num <= n; num++){
-        int isprime = 1;
-
-        for (int c = 2; c <= sqrt(num); c++){
-            if (num % c == 0) {
-                isprime = 0;
-                break;
-            }
-        }
-
-        if (isprime) {
-            printf("%d ", num);
-            count++;
-        }
-    }
-
-    printf("\nTotal prime numbers: %d\n", count);
-
+    if(isPrime(n,2))
+    printf("Prime\n");
+    else
+    printf("Not prime\n");
     return 0;
 }

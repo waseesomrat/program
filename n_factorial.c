@@ -1,15 +1,19 @@
-#include <stdio.h>
+#include<stdio.h>
+
+int factorial(int n){
+
+    if( n == 0){
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
 
 int main() {
 
-int n;
-scanf("%d", &n);
-long long fact=1;
-
-for(int i = 1;i<=n;i++){
-
-    fact = fact * i;
-}
-printf("%lld", fact);
-return 0;
+    int n;
+    scanf("%d", &n);
+   int x = factorial(n);
+   printf("%d", x);
+    return 0;
 }

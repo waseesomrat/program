@@ -1,22 +1,30 @@
-#include <stdio.h>
-int main() {
-int digits[10]  = {};
-int repeated = 0;
+#include<stdio.h>
+
+void repeated_digit() {
+
+int digit[10] = {0};
 char c;
-while((c = getchar()) != '\n')
-{
-if(c >= '0' && c <= '9'){
-int val = c - '0';
-digits[val]++;
-}
-}
+int repeated = 0;
+
+
+while((c = getchar()) != '\n'){
+    if(c >= '0' && c <= '9'){
+    int val = c - '0';
+    digit[val]++;
+}}
 for(int i = 0;i < 10;i++){
-    if(digits[i] > 1){
-    repeated = 1;
-    printf("%d prints:%d times\n", i,digits[i]);
+    if(digit[i] > 1){
+        printf("repeated digit: %d & repeated times: %d\n", i , digit[i]);
+        repeated = 1;
     }
 }
-if(repeated == 0){
-printf("not repeated");}
-return 0;
+    if(repeated == 0){
+        printf("NO REPEATED");
+    }
+}
+int main() {
+    printf("ENTER NUMBER");
+    getchar();
+    repeated_digit();
+    return 0;
 }
