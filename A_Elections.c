@@ -5,44 +5,23 @@ int main() {
     int t;
     scanf("%d", &t);
 
-    while(t--){
-        int x , y  ,z ;
-       
-        int f = 0;
-        scanf("%d %d %d", &x , &y, &z);
-         int a = x;
-        int b = y;
-        int c = z;
-        if(a == b && b == c){
-           f = 0;
-        }
-        else if(x >= y && x >= z){
-            b = a - b + 1;
-            c = a - c + 1;
-            a = 0;
-            f = 1;
-    }
-            else if(y >= x && y >= z){
-            x = y - x + 1;
-            z = y - z + 1;
-             y = 0;
-             f = 1;
+    while(t--) {
 
-    }
-            else if(z >= y && z >= x){
-            x = z - x + 1;
-            y = z - y + 1;
-            z = 0;
-            f = 1;
-    }
-   
+        int x, y, z;
+        scanf("%d %d %d", &x, &y, &z);
 
-    if(f == 0){
-         printf("%d %d %d\n", x + 1 , y + 1 , z + 1);
+        int m = x;
+        if(y > m) m = y;
+        if(z > m) m = z;
+
+        int count = (x == m) + (y == m) + (z == m);
+
+        int a = (x == m && count == 1) ? 0 : (m - x + 1);
+        int b = (y == m && count == 1) ? 0 : (m - y + 1);
+        int c = (z == m && count == 1) ? 0 : (m - z + 1);
+
+        printf("%d %d %d\n", a, b, c);
     }
-    else if(f == 1){
-    printf("%d %d %d\n", x , y, z);
-    }
-}
-return 0;
+
+    return 0;
 }
