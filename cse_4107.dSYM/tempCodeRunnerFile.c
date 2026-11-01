@@ -1,1 +1,0 @@
-printf("%.2d * %.2d  = %.2d\n", count , num, r = count * num);
